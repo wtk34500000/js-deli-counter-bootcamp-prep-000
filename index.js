@@ -1,7 +1,12 @@
-const takeANumber = (katzDeliLine, customerName) => {
-  katzDeliLine.push(customerName);
-  return `Welcome, ${customerName}. You are number ${katzDeliLine.length} in line.`;
+
+var counter =0;
+
+const takeANumber = (katzDeliLine) => {
+  counter++;
+  katzDeliLine.push(counter);
+  return `Welcome, customer. You are number ${counter} in line.`;
 }
+
 
 const nowServing = (katzDeliLine) => {
   if(katzDeliLine.length === 0){
@@ -17,7 +22,7 @@ const currentLine = (katzDeliLine) => {
      return `The line is currently empty.`;
   }else{
     for(let i = 0; i < katzDeliLine.length; i++){
-       message.push(` ${[i+1]}. ${katzDeliLine[i]}`);
+       message.push(` ${(i+1)}. ${katzDeliLine[i]}`);
      }
      return `The line is currently:${message}`;
   }
